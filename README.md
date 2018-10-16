@@ -1,16 +1,49 @@
-# vid-slider
+# Quick documentation on how to use the component
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+the simplest way to use the component would be as follows.
 
-Describe vid-slider here.
+```js
+<SubclipMarker
+  // thumbnails with all the photos
+  thumbnails={{
+    "0.0": "url",
+    "0.5": "url",
+    ...
+  }}
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+  // where the marker starts.
+ startAt="1.0"
+  // where the marker ends.
+  endAt="13.0"
+/>
+```
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+`numberOfThumbnails` is the number of phontos that would display on the slider defaults to `10` if none was provided.
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+keep in mind that if you provide less entries in the objects the `numberOfThumbnails` that would be used instead of the `numberOfThumbnails`.
+
+`onStartMarkChagned` fn: will be called when the start value of the marker change
+
+`onEndMarkChagned` fn: will be called when the end value of the marker change
+
+`highlightUpdated` fn: will be called when either start/end values are changed
+
+`minimum_marked_length` minimum length is sec that the marker can't be below.
+
+`play_position` where to render the play position indicator `startAt` when to start marker at. `endAt` when to end marker at.
+
+keep in mind that `play_position`, `startAt` and `endAt` all have to match keys in the `thumbnails` object provided.
+
+`play_position` is optional.
+
+`startAt` and `endAt` are mandatory without them the component be diplayed.
+
+`previewPosition` prop specify where the preview should render, it accepts "top" or "bottom" values it defaults to "top"
+
+you can pretty much overriding any components style with
+
+`highlightStyles`, `resizeIndicatorsStyle`, `resizeLeftIndicatorStyle`, `resizeRightIndicatorStyle`,`resizeIndicatorCirclesStyle`, `previewStyle`, `imgPreviewStyle`.
+
+names are indicative of what they override.
+
+to override the numver of circles in the resize indicator use prop `resizeIndicatorCirclesCount`

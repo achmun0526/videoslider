@@ -1,6 +1,6 @@
 {
   "name": "vid-slider",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "vid-slider React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -33,8 +33,8 @@
   },
   "author": "Ahmed Eid",
   "homepage": "",
-  "license": "MIT",
-  "repository": "",
+  "license": "",
+  "repository": "https://github.com/achmun0526/videoslider",
   "keywords": [
     "react-component"
   ]

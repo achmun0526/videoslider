@@ -19,16 +19,19 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash.debounce": "^4.0.8",
+    "lodash.range": "^3.2.0"
+  },
   "peerDependencies": {
-    "react": "16.x"
+    "react": ">16.3.0"
   },
   "devDependencies": {
     "nwb": "0.23.x",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
   },
-  "author": "",
+  "author": "Ahmed Eid",
   "homepage": "",
   "license": "MIT",
   "repository": "",

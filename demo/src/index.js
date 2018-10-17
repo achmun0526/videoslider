@@ -23,6 +23,16 @@ class Demo extends Component {
             color: #bbb;
           }`}
         </style>
+
+        <input
+          type="range"
+          min={0}
+          max={19.5}
+          step={0.5}
+          value={this.state.play_position}
+          onChange={this.handlePlayPositionChange}
+        />
+
         play position: &nbsp; {this.state.play_position}
         <br />
         startAt: &nbsp; {this.state.startAt}
@@ -36,6 +46,12 @@ class Demo extends Component {
 
   highlightUpdated = (startAt, endAt) => {
     this.setState({ startAt, endAt })
+  }
+
+  handlePlayPositionChange = e => {
+    this.setState({
+      play_position: e.target.value,
+    })
   }
 
   render() {

@@ -59,14 +59,21 @@ class ThumbnailPart extends React.Component {
 
     if (img.key == endMarkerAt) {
       SubclipMarker.refs.endPart = this.el
-      if (setEndPartBounds(this.el.getBoundingClientRect(), Number(img.key)))
-        setEndPartImg(img.url)
+      if (setEndPartBounds(this.el.getBoundingClientRect(), Number(img.key))) setEndPartImg(img.url)
     }
   }
 
-  shouldComponentUpdate({ img: nImg }) {
-    const { img } = this.props
-    return nImg.url !== img.url
+  shouldComponentUpdate({ img: nImg, play_position: pp }) {
+    const { img, play_position } = this.props
+    return nImg.url !== img.url || Number(play_position) !== Number(pp)
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const { play_position, img } = this.props
+    if (Number(img.key) === Number(play_position)) {
+      SubclipMarker.refs.previewPart = this.el
+      this.props.setPreviewPartBounds(this.el.getBoundingClientRect())
+    }
   }
 
   render() {
@@ -81,9 +88,7 @@ class ThumbnailPart extends React.Component {
         className="subclip__thumbnail__part"
         onMouseEnter={this.handlePartMouseEnter}
         onMouseLeave={this.handlePartMouseLeave}
-
-      >
-      </div>
+      />
     )
   }
 }

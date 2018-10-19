@@ -12,7 +12,7 @@
   ],
   "typings": "./src/index.d.ts",
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "nwb build-react-component && cp src/styles.css lib/styles.css",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
     "prepush": "npm run build ----copy-files",

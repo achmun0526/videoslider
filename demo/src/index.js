@@ -3,6 +3,8 @@ import { render } from "react-dom"
 import thumbnails from "./moments.json"
 import VideoSlider from "../../src"
 
+import "../../src/styles.css"
+
 class Demo extends Component {
   state = {
     play_position: 13,
@@ -23,7 +25,6 @@ class Demo extends Component {
             color: #bbb;
           }`}
         </style>
-
         <input
           type="range"
           min={0}
@@ -32,7 +33,6 @@ class Demo extends Component {
           value={this.state.play_position}
           onChange={this.handlePlayPositionChange}
         />
-
         play position: &nbsp; {this.state.play_position}
         <br />
         startAt: &nbsp; {this.state.startAt}

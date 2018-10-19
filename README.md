@@ -1,8 +1,13 @@
 # Quick documentation on how to use the component
 
+Edit:
+
 the simplest way to use the component would be as follows.
 
 ```js
+import SubclipMarker from "vid-slider"
+import "./node_modules/vid-slider/lib/styles.css"
+
 <SubclipMarker
   // thumbnails with all the photos
   thumbnails={{

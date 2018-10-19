@@ -6,8 +6,6 @@ import Highlight from "./Highlight"
 import PlayPositionIndicator from "./PlayPositionIndicator"
 import Preview from "./Preview"
 
-import "./styles.css"
-
 export const SubclipContext = React.createContext()
 
 class SubclipMarker extends React.Component {

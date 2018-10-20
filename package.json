@@ -1,6 +1,6 @@
 {
   "name": "vid-slider",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "vid-slider React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -12,10 +12,11 @@
   ],
   "typings": "./src/index.d.ts",
   "scripts": {
-    "build": "nwb build-react-component && cp src/styles.css lib/styles.css",
+    "css": "cp src/styles.css lib/styles.css ",
+    "build": " nwb build-react-component ----copy-files --no-demo && npm run css",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
-    "prepush": "npm run build ----copy-files",
+    "prepush": "npm run build ",
     "start": "nwb serve-react-demo",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",

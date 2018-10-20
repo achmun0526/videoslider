@@ -1,12 +1,34 @@
 # Quick documentation on how to use the component
 
-Edit:
 
-the simplest way to use the component would be as follows.
+## to use the package
+
+`yarn add https://github.com/achmun0526/videoslider/`
+
+`npm install https://github.com/achmun0526/videoslider/`
+
+### when changing package code.
+- build the package with `npm run build`
+- increase version in `package.json`
+
+### in case of any errors while installing
+- build the package with `npm run build`
+- increase version in `package.json`
+- `npm run clean` or `yarn cache clean`
+
+  > you can also remove `~/.yarn-cache/` or `~/.npm/_cacache/`.
+
+- you can
+- reinstall the package
+
+
+follow the example here https://github.com/a-eid/vid-slider-demo
 
 ```js
-import SubclipMarker from "vid-slider"
-import "./node_modules/vid-slider/lib/styles.css"
+import VideoSlider from "vid-slider"
+import "vid-slider/lib/styles.css"
+
+
 
 <SubclipMarker
   // thumbnails with all the photos
@@ -23,9 +45,11 @@ import "./node_modules/vid-slider/lib/styles.css"
 />
 ```
 
-`numberOfThumbnails` is the number of phontos that would display on the slider defaults to `10` if none was provided.
+`numberOfThumbnails`
 
-keep in mind that if you provide less entries in the objects the `numberOfThumbnails` that would be used instead of the `numberOfThumbnails`.
+is the number of phontos that would display on the slider defaults to `10` if none was provided.
+
+> keep in mind that if you provide less entries in the objects the `numberOfThumbnails` that would be used instead of the `numberOfThumbnails`.
 
 `onStartMarkChagned` fn: will be called when the start value of the marker change
 
